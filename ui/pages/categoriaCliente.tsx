@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { User, UserDetailsProps } from "../shared/user";
 
 export const CreateChategorieForm: React.FC = () => {
-  const [user, setUser] = useState<User>({ id: "x", name: "", email: "" });
+  const [user, setUser] = useState<User>({ id: "x", name: ""});
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -96,23 +96,12 @@ const UserDetails: React.FC<UserDetailsProps> = ({ user, onUpdateUser }) => {
               onChange={handleInputChange}
             />
           </div>
-          <div>
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              value={editedUser.email}
-              onChange={handleInputChange}
-            />
-          </div>
           <button onClick={handleUpdate}>Save</button>
           <button onClick={() => setEditing(false)}>Cancel</button>
         </div>
       ) : (
         <div>
           <p>Name: {user.name}</p>
-          <p>Email: {user.email}</p>
           <button onClick={() => setEditing(true)}>Edit</button>
           <button onClick={() => setDeleting(true)}>Delete</button>
         </div>
