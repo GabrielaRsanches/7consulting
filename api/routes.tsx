@@ -6,7 +6,7 @@ export default async function createUser(
 ) {
   if (req.method === "POST") {
     try {
-      const response = await fetch("YOUR_DOTNET_BACKEND_URL/api/users", {
+      const response = await fetch("localhost:3000/api/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,7 +37,7 @@ export async function findAndUpdateUser(
     try {
       const userId = req.query.id as string;
 
-      const response = await fetch(`localhost:3000L/api/users/${userId}`);
+      const response = await fetch(`localhost:3000/api/users/${userId}`);
       const data = await response.json();
 
       if (response.ok) {
