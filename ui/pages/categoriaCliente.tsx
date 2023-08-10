@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { User, UserDetailsProps } from "../shared/user";
+import { User, UserDetailsProps } from "../shared/category";
 
 export const CreateChategorieForm: React.FC = () => {
   const [user, setUser] = useState<User>({ id: "x", name: ""});
